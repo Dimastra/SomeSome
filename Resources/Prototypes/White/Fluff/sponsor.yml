@@ -1,0 +1,23 @@
+﻿# DOOMMAX
+- type: loadout
+  id: SuitGlamorousLoadout
+  entity: ClothingOuterSuitGlamorous
+  sponsorOnly: true
+
+# Maury
+- type: loadout
+  id: ClothingUniformJumpsuitMaury #Should be ClothingUniformMauryLoadout but like i said i`m retard
+  entity: ClothingUniformJumpsuitMauryZ
+  sponsorOnly: true
+
+# YouWellLeer
+- type: loadout
+  id: SledgebarLoadout
+  entity: Sledgebar
+  sponsorOnly: true
+
+# YouWellLeer
+- type: loadout
+  id: BibleNyaLoadout
+  entity: BibleNya
+  sponsorOnly: true

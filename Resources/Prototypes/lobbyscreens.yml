@@ -1,0 +1,24 @@
+﻿- type: lobbyBackground
+  id: Clown
+  background: /Textures/LobbyScreens/clown.png
+
+- type: lobbyBackground
+  id: Detective
+  background: /Textures/LobbyScreens/detective.png
+
+- type: lobbyBackground
+  id: Interior
+  background: /Textures/LobbyScreens/interior.png
+
+- type: lobbyBackground
+  id: Engineer
+  background: /Textures/LobbyScreens/engineer_text.png
+
+- type: lobbyBackground
+  id: Utilizator
+  background: /Textures/LobbyScreens/utilizator_text.png
+
+- type: lobbyBackground
+  id: VoidSuit
+  background: /Textures/LobbyScreens/voidsuit_sec_text.png
+

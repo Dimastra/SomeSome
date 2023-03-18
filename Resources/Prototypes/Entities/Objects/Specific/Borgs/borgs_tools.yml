@@ -1,0 +1,246 @@
+﻿- type: entity
+  name: epinephrine hypospray
+  parent: BaseItem
+  description: A borg version of hypospray that automatically regenerates epinephrine.
+  id: HyposprayBorgStandard
+  components:
+    - type: Sprite
+      sprite: Objects/Specific/Medical/hypospray.rsi
+      state: hypo
+    - type: Item
+      sprite: Objects/Specific/Medical/hypospray.rsi
+    - type: SolutionContainerManager
+      solutions:
+        hypospray:
+          maxVol: 30
+    - type: AutoRegenReagent
+      solution: hypospray
+      reagents:
+        - Epinephrine
+    - type: Hypospray
+      pierceArmor: true
+
+- type: entity
+  parent: HyposprayBorgStandard
+  id: HyposprayBorgMedical
+  name: medical cyborg hypospray
+  description: A hypospray that can switch through several reagents.
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        hypospray:
+          maxVol: 15
+    - type: AutoRegenReagent
+      solution: hypospray
+      reagents:
+        - Epinephrine
+        - Tricordrazine
+        - Dylovene
+        - Bicaridine
+        - Kelotane
+
+- type: entity
+  parent: BaseItem
+  id: StackHolderSteel
+  name: steel sheet holder
+  description: Holds steel sheets inside this borg.
+  components:
+    - type: ItemSlots
+      slots:
+        stack_slot:
+          name: steel stack
+          startingItem: SheetSteel
+          whitelist:
+            tags:
+              - SheetSteel
+    - type: StackHolder
+    - type: Sprite
+      netsync: false
+      sprite: Objects/Materials/Sheets/metal.rsi
+      state: steel
+    - type: ContainerContainer
+      containers:
+        stack_slot: !type:ContainerSlot
+
+- type: entity
+  parent: BaseItem
+  id: StackHolderHealingItem
+  name: Набор для ушибов
+  components:
+    - type: ItemSlots
+      slots:
+        stack_slot:
+          name: healing item
+          startingItem: Brutepack
+          whitelist:
+            tags:
+              - Brutepack
+              - Ointment
+              - Gauze
+    - type: StackHolder
+    - type: Sprite
+      netsync: false
+      sprite: Objects/Specific/Medical/medical.rsi
+      state: brutepack
+    - type: ContainerContainer
+      containers:
+        stack_slot: !type:ContainerSlot
+
+
+- type: entity
+  parent: BaseItem
+  id: StackHolderFloorTile
+  name: floor tile holder
+  description: Holds floor tiles inside this borg.
+  components:
+    - type: ItemSlots
+      slots:
+        stack_slot:
+          name: floor tile stack
+          startingItem: FloorTileItemSteelFull
+          whitelist:
+            components:
+              - FloorTile
+    - type: StackHolder
+    - type: Sprite
+      netsync: false
+      sprite: Objects/Tiles/tile.rsi
+      state: steel
+    - type: ContainerContainer
+      containers:
+        stack_slot: !type:ContainerSlot
+
+- type: entity
+  parent: BaseItem
+  id: StackHolderHandcuffs
+  name: handcuffs holder
+  description: Holds cuffs inside this borg.
+  components:
+    - type: ItemSlots
+      slots:
+        stack_slot:
+          name: handcuff stack
+          startingItem: Handcuffs
+          whitelist:
+            components:
+              - Handcuff
+    - type: StackHolder
+    - type: Sprite
+      netsync: false
+      sprite: Objects/Misc/handcuffs.rsi
+      state: handcuff
+    - type: ContainerContainer
+      containers:
+        stack_slot: !type:ContainerSlot
+
+- type: entity
+  parent: BaseItem
+  id: StackHolderCable
+  name: cable holder
+  description: Holds cables inside this borg.
+  components:
+    - type: ItemSlots
+      slots:
+        stack_slot:
+          name: cable stack
+          startingItem: CableApcStack
+          whitelist:
+            components:
+              - CablePlacer
+    - type: StackHolder
+    - type: Sprite
+      netsync: false
+      sprite: Objects/Tools/cable-coils.rsi
+      state: coillv-30
+    - type: ContainerContainer
+      containers:
+        stack_slot: !type:ContainerSlot
+
+- type: entity
+  parent: PartRodMetal
+  id: PartRodMetalInfinite
+  components:
+    - type: Stack
+      unlimited: true
+
+- type: entity
+  parent: ClothingHeadsetAltCommand
+  id: ClothingHeadsetBorg
+  components:
+    - type: Tag
+      tags:
+        - NoAction
+
+- type: entity
+  parent: FloorTileItemSteel
+  id: FloorTileItemSteelFull
+  suffix: Full
+  components:
+    - type: Stack
+      count: 30
+
+
+
+# shitt
+
+- type: entity
+  parent: WelderIndustrialAdvanced
+  id: WelderIndustrialBorg
+  components:
+    - type: AutoRegenReagent
+      solution: Welder
+      reagents:
+        - WeldingFuel
+
+- type: entity
+  parent: Flash
+  id: BorgFlash
+  components:
+    - type: Flash
+      autoRecharge: true
+
+- type: entity
+  parent: FireExtinguisher
+  id: FireExtinguisherBorg
+  components:
+    - type: AutoRegenReagent
+      solution: spray
+      reagents:
+        - Water
+
+- type: entity
+  parent: Stunbaton
+  id: StunBatonBorg
+  components:
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 3
+
+- type: entity
+  parent: WeaponDisabler
+  id: DisablerBorg
+  components:
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 3
+    - type: ProjectileBatteryAmmoProvider
+      proto: BulletDisablerBorg
+      fireCost: 65
+
+- type: entity
+  parent: WeaponLaserCarbine
+  id: LaserBorgSyndi
+  components:
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 3
+    - type: HitscanBatteryAmmoProvider
+      proto: RedLaser
+      fireCost: 100
+
+- type: entity
+  parent: RCD
+  id: RCDBorg
+  components:
+    - type: RCD
+      autoRecharge: true

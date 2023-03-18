@@ -1,0 +1,3 @@
+﻿- type: stationGoal
+  id: StationGoalMain
+  text: station-goal-main

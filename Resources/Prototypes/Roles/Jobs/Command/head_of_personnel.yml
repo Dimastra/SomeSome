@@ -1,0 +1,45 @@
+- type: job
+  id: HeadOfPersonnel
+  name: job-name-hop
+  description: job-description-hop
+  playTimeTracker: JobHeadOfPersonnel
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 9000
+    - !type:OverallPlaytimeRequirement
+      time: 90000
+  weight: 20
+  startingGear: HoPGear
+  icon: "HeadOfPersonnel"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: true
+  whitelistedSpecies:
+    - Human
+  access:
+  - Command
+  - HeadOfPersonnel
+  - Bar
+  - Service
+  - Maintenance
+  - Janitor
+  - Theatre
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - External
+  # I mean they'll give themselves the rest of the access levels *anyways*.
+
+- type: startingGear
+  id: HoPGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoP
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBrown
+    head: ClothingHeadHatHopcap
+    id: HoPPDA
+    ears: ClothingHeadsetAltCommand
+  innerclothingskirt: ClothingUniformJumpskirtHoP
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled
